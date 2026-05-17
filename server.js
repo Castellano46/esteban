@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.IP || '0.0.0.0';
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -126,7 +127,7 @@ app.post('/api/contact', (req, res) => {
     }
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, HOST, () => {
     console.log(`SERVER ACTIVE AT http://localhost:${PORT}`);
     console.log(`Views path: ${viewsDir}`);
     fs.readdirSync(viewsDir).forEach(f => console.log(` - Found view: ${f}`));

@@ -289,3 +289,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Mobile Menu Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBtns = document.querySelectorAll('.mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu');
+    
+    if (mobileMenu) {
+        menuBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                // slight delay for transition
+                setTimeout(() => {
+                    mobileMenu.classList.remove('opacity-0');
+                    mobileMenu.classList.add('opacity-100');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenu.classList.remove('flex');
+                mobileMenu.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        };
+
+        if (closeMenuBtn) {
+            closeMenuBtn.addEventListener('click', closeMenu);
+        }
+        
+        // Close on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    }
+});
+

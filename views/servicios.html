@@ -28,11 +28,28 @@
             <a href="/resenas" class="nav-link text-xs uppercase tracking-widest font-bold">Reseñas</a>
             <a href="/contacto" class="nav-link text-xs uppercase tracking-widest font-bold">Contacto</a>
         </nav>
+
+        <button class="md:hidden mobile-menu-btn">
+            <i data-lucide="menu" class="w-8 h-8 text-white"></i>
+        </button>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-primary/95 backdrop-blur-md z-[100] hidden flex-col items-center justify-center space-y-8 opacity-0 transition-opacity duration-300">
+        <button id="close-menu" class="absolute top-8 right-6 text-white">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="/" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Inicio</a>
+        <a href="/nosotros" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Nosotros</a>
+        <a href="/servicios" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Servicios</a>
+        <a href="/proyectos" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Proyectos</a>
+        <a href="/resenas" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Reseñas</a>
+        <a href="/contacto" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Contacto</a>
+    </div>
 
     <main class="pt-40">
         <section class="max-w-7xl mx-auto px-6 lg:px-12 mb-32">
-            <h1 class="text-7xl lg:text-9xl font-bold leading-none mb-12">NUESTROS <br> <span class="italic text-accent">SISTEMAS</span></h1>
+            <h1 class="text-5xl md:text-7xl lg:text-9xl font-bold leading-none mb-12">NUESTROS <br> <span class="italic text-accent">SISTEMAS</span></h1>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
                 <p class="text-xl text-text-muted leading-relaxed">
                     Desarrollamos soluciones integrales de construcción en seco, combinando ingeniería acústica, aislamiento térmico y diseño arquitectónico de vanguardia.
