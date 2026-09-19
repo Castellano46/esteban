@@ -6,7 +6,6 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const HOST = process.env.IP || '0.0.0.0';
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -127,8 +126,10 @@ app.post('/api/contact', (req, res) => {
     }
 });
 
-app.listen(PORT, HOST, () => {
-    console.log(`SERVER ACTIVE AT http://localhost:${PORT}`);
+app.listen(PORT, () => {
+    console.log(`SERVER ACTIVE AT PORT ${PORT}`);
     console.log(`Views path: ${viewsDir}`);
-    fs.readdirSync(viewsDir).forEach(f => console.log(` - Found view: ${f}`));
+    if (fs.existsSync(viewsDir)) {
+        fs.readdirSync(viewsDir).forEach(f => console.log(` - Found view: ${f}`));
+    }
 });
