@@ -21,7 +21,7 @@ const legalContent = {
         content: `
             <h3>1. Información General</h3>
             <p>En cumplimiento con el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se informa que ESTEBAN PLADUR es el titular de este sitio web.</p>
-            <p>Domicilio Social: Madrid, España. Email: info@estebanpladur.com</p>
+            <p>Domicilio Social: Calle los huertos, 4, 23658 Jamilena, Jaén. Email: info@estebanpladur.com</p>
             <h3>2. Propiedad Intelectual</h3>
             <p>Todos los contenidos del sitio web (textos, imágenes, diseños, logotipos) son propiedad exclusiva de Esteban Pladur o de terceros que han autorizado su uso.</p>
             <h3>3. Responsabilidad</h3>
