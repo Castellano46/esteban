@@ -100,53 +100,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Advanced Magnetic Buttons
-const magneticBtns = document.querySelectorAll('.magnetic-btn');
-magneticBtns.forEach(btn => {
-    const inner = btn.querySelector('span');
-    
-    btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        
-        // Move the button itself
-        gsap.to(btn, {
-            x: x * 0.3,
-            y: y * 0.3,
-            duration: 0.6,
-            ease: "power2.out"
-        });
+// Advanced Magnetic Buttons (desktop only to prevent touch jitter)
+const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
 
-        // Move the inner text (parallax)
-        if (inner) {
-            gsap.to(inner, {
-                x: x * 0.1,
-                y: y * 0.1,
+const magneticBtns = document.querySelectorAll('.magnetic-btn');
+if (!isTouchDevice) {
+    magneticBtns.forEach(btn => {
+        const inner = btn.querySelector('span');
+        
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            // Move the button itself
+            gsap.to(btn, {
+                x: x * 0.3,
+                y: y * 0.3,
                 duration: 0.6,
                 ease: "power2.out"
             });
-        }
-    });
-    
-    btn.addEventListener('mouseleave', () => {
-        gsap.to(btn, {
-            x: 0,
-            y: 0,
-            duration: 0.6,
-            ease: "elastic.out(1, 0.3)"
-        });
 
-        if (inner) {
-            gsap.to(inner, {
+            // Move the inner text (parallax)
+            if (inner) {
+                gsap.to(inner, {
+                    x: x * 0.1,
+                    y: y * 0.1,
+                    duration: 0.6,
+                    ease: "power2.out"
+                });
+            }
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            gsap.to(btn, {
                 x: 0,
                 y: 0,
                 duration: 0.6,
                 ease: "elastic.out(1, 0.3)"
             });
-        }
+
+            if (inner) {
+                gsap.to(inner, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.6,
+                    ease: "elastic.out(1, 0.3)"
+                });
+            }
+        });
     });
-});
+}
 
 // Parallax Hero Image
 const heroImg = document.getElementById('hero-img');
@@ -297,18 +301,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenuBtn = document.getElementById('close-menu');
     
     if (mobileMenu) {
-        menuBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('flex');
-                // slight delay for transition
-                setTimeout(() => {
-                    mobileMenu.classList.remove('opacity-0');
-                    mobileMenu.classList.add('opacity-100');
-                }, 10);
-                document.body.style.overflow = 'hidden';
-            });
+        // Highlight active page link in mobile menu
+        const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            const linkPath = link.getAttribute('href').replace(/\/$/, '') || '/';
+            if (linkPath === currentPath) {
+                link.classList.add('text-accent', 'font-extrabold');
+            }
         });
+
+        const openMenu = () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            setTimeout(() => {
+                mobileMenu.classList.remove('opacity-0');
+                mobileMenu.classList.add('opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        };
 
         const closeMenu = () => {
             mobileMenu.classList.remove('opacity-100');
@@ -320,15 +331,25 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
         };
 
-        if (closeMenuBtn) {
-            closeMenuBtn.addEventListener('click', closeMenu);
-        }
+        menuBtns.forEach(btn => btn.addEventListener('click', openMenu));
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
         
         // Close on link click
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        // Close on backdrop tap (clicking outside nav links)
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) closeMenu();
+        });
+
+        // Close on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMenu();
+                closeLegalModal();
+            }
         });
     }
 });
+
 

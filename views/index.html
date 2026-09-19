@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ESTEBAN | Sistemas de Arquitectura Interior</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/main.css">
@@ -19,8 +19,8 @@
     <div class="page-transition" id="transition"></div>
 
     <!-- Header -->
-    <header class="fixed top-0 w-full z-50 px-6 lg:px-12 py-8 flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold tracking-tighter uppercase">Esteban</a>
+    <header class="fixed top-0 w-full z-50 px-4 sm:px-6 lg:px-12 py-4 sm:py-8 flex justify-between items-center">
+        <a href="/" class="text-xl sm:text-2xl font-bold tracking-tighter uppercase">Esteban</a>
         
         <nav class="hidden md:flex space-x-12">
             <a href="/" class="nav-link text-xs uppercase tracking-widest font-bold text-accent">Inicio</a>
@@ -31,48 +31,48 @@
             <a href="/contacto" class="nav-link text-xs uppercase tracking-widest font-bold">Contacto</a>
         </nav>
 
-        <button class="md:hidden mobile-menu-btn">
-            <i data-lucide="menu" class="w-8 h-8 text-white"></i>
+        <button class="md:hidden mobile-menu-btn p-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none" aria-label="Abrir menú">
+            <i data-lucide="menu" class="w-7 h-7 text-white"></i>
         </button>
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-primary/95 backdrop-blur-md z-[100] hidden flex-col items-center justify-center space-y-8 opacity-0 transition-opacity duration-300">
-        <button id="close-menu" class="absolute top-8 right-6 text-white">
+    <div id="mobile-menu" class="fixed inset-0 bg-primary/95 backdrop-blur-md z-[100] hidden flex-col items-center justify-center space-y-6 sm:space-y-8 opacity-0 transition-opacity duration-300 p-6">
+        <button id="close-menu" class="absolute top-6 right-5 p-2 text-white hover:text-accent transition-colors" aria-label="Cerrar menú">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
-        <a href="/" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Inicio</a>
-        <a href="/nosotros" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Nosotros</a>
-        <a href="/servicios" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Servicios</a>
-        <a href="/proyectos" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Proyectos</a>
-        <a href="/resenas" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Reseñas</a>
-        <a href="/contacto" class="text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors">Contacto</a>
+        <a href="/" class="text-xl sm:text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors py-2">Inicio</a>
+        <a href="/nosotros" class="text-xl sm:text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors py-2">Nosotros</a>
+        <a href="/servicios" class="text-xl sm:text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors py-2">Servicios</a>
+        <a href="/proyectos" class="text-xl sm:text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors py-2">Proyectos</a>
+        <a href="/resenas" class="text-xl sm:text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors py-2">Reseñas</a>
+        <a href="/contacto" class="text-xl sm:text-2xl uppercase tracking-widest font-bold hover:text-accent transition-colors py-2">Contacto</a>
     </div>
 
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="relative min-h-screen flex items-center justify-center pt-20">
+        <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 sm:pt-20">
             <div class="absolute inset-0 overflow-hidden">
                 <img src="img/hero.png" alt="Architecture" class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 scale-110" id="hero-img">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary"></div>
             </div>
 
-            <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
                 <div class="space-y-4">
-                    <span class="inline-block text-accent uppercase tracking-[0.3em] text-sm font-bold reveal">Artesanía en Construcción Seco</span>
+                    <span class="inline-block text-accent uppercase tracking-[0.25em] sm:tracking-[0.3em] text-xs sm:text-sm font-bold reveal">Artesanía en Construcción Seco</span>
                     <h1 class="hero-title font-bold reveal" style="transition-delay: 0.2s;">
                         DEFINIENDO <br>
                         <span class="italic text-accent">EL ESPACIO</span>
                     </h1>
                 </div>
 
-                <div class="mt-12 flex flex-col md:flex-row items-end justify-between gap-8">
-                    <p class="max-w-md text-text-muted leading-relaxed reveal" style="transition-delay: 0.4s;">
+                <div class="mt-8 sm:mt-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 sm:gap-8">
+                    <p class="max-w-md text-text-muted text-sm sm:text-base leading-relaxed reveal" style="transition-delay: 0.4s;">
                         Elevamos los estándares de la arquitectura interior mediante sistemas de pladur de alta precisión y aislamientos técnicos de vanguardia.
                     </p>
-                    <div class="reveal" style="transition-delay: 0.6s;">
-                        <a href="/proyectos" class="magnetic-btn btn-outline px-12 py-5 font-bold uppercase tracking-widest transition-all duration-500">
+                    <div class="reveal w-full md:w-auto" style="transition-delay: 0.6s;">
+                        <a href="/proyectos" class="magnetic-btn btn-outline w-full md:w-auto px-8 sm:px-12 py-4 sm:py-5 font-bold uppercase tracking-widest transition-all duration-500">
                             <span>
                                 Explorar Obras
                                 <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -83,49 +83,49 @@
             </div>
 
             <!-- Scroll Indicator -->
-            <div class="absolute bottom-10 left-12 flex items-center space-x-4 opacity-30">
+            <div class="hidden sm:flex absolute bottom-10 left-12 items-center space-x-4 opacity-30">
                 <div class="w-px h-20 bg-white"></div>
                 <span class="text-[10px] uppercase tracking-[0.5em] rotate-90 origin-left">Scroll</span>
             </div>
         </section>
 
         <!-- Brief Services Preview -->
-        <section class="py-32 bg-primary">
-            <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                <div class="space-y-12 reveal">
-                    <h2 class="text-5xl lg:text-7xl font-bold leading-tight">Excelencia en <br> Cada Detalle</h2>
-                    <p class="text-lg text-text-muted leading-relaxed">
+        <section class="py-16 sm:py-24 lg:py-32 bg-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div class="space-y-8 sm:space-y-12 reveal">
+                    <h2 class="text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight">Excelencia en <br> Cada Detalle</h2>
+                    <p class="text-base sm:text-lg text-text-muted leading-relaxed">
                         Nuestra arquitectura no es solo lo que se ve, sino lo que se siente. Desde el aislamiento acústico perfecto hasta las curvas imposibles en pladur.
                     </p>
-                    <ul class="space-y-6">
+                    <ul class="space-y-4 sm:space-y-6">
                         <li class="flex items-center space-x-4 group cursor-pointer">
                             <span class="text-accent font-bold">01</span>
-                            <span class="text-2xl font-bold group-hover:translate-x-4 transition-transform duration-300">Techos de Alta Gama</span>
+                            <span class="text-lg sm:text-2xl font-bold group-hover:translate-x-4 transition-transform duration-300">Techos de Alta Gama</span>
                         </li>
                         <li class="flex items-center space-x-4 group cursor-pointer">
                             <span class="text-accent font-bold">02</span>
-                            <span class="text-2xl font-bold group-hover:translate-x-4 transition-transform duration-300">Tabiquería Técnica</span>
+                            <span class="text-lg sm:text-2xl font-bold group-hover:translate-x-4 transition-transform duration-300">Tabiquería Técnica</span>
                         </li>
                         <li class="flex items-center space-x-4 group cursor-pointer">
                             <span class="text-accent font-bold">03</span>
-                            <span class="text-2xl font-bold group-hover:translate-x-4 transition-transform duration-300">Aislamiento Premium</span>
+                            <span class="text-lg sm:text-2xl font-bold group-hover:translate-x-4 transition-transform duration-300">Aislamiento Premium</span>
                         </li>
                     </ul>
                 </div>
                 <div class="relative reveal" style="transition-delay: 0.3s;">
-                    <img src="img/services.png" alt="Detalle" class="rounded-sm shadow-2xl">
-                    <div class="absolute -bottom-12 -left-12 w-64 h-64 border border-accent/20 -z-10"></div>
+                    <img src="img/services.png" alt="Detalle" class="rounded-sm shadow-2xl w-full object-cover">
+                    <div class="hidden sm:block absolute -bottom-12 -left-12 w-64 h-64 border border-accent/20 -z-10"></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="pt-32 pb-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <footer class="pt-20 sm:pt-32 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <!-- Pre-footer CTA -->
-            <div class="mb-32 flex flex-col md:flex-row justify-between items-center border-b border-white/5 pb-20 gap-12">
-                <h2 class="text-4xl lg:text-6xl font-bold max-w-xl leading-tight">¿LISTO PARA <br><span class="italic text-accent">TRANSFORMAR</span> SU ESPACIO?</h2>
-                <a href="/contacto" class="magnetic-btn btn-filled px-12 py-6 font-bold uppercase tracking-widest transition-all shadow-2xl shadow-accent/20">
+            <div class="mb-16 sm:mb-32 flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/5 pb-12 sm:pb-20 gap-8 sm:gap-12">
+                <h2 class="text-3xl sm:text-4xl lg:text-6xl font-bold max-w-xl leading-tight">¿LISTO PARA <br><span class="italic text-accent">TRANSFORMAR</span> SU ESPACIO?</h2>
+                <a href="/contacto" class="magnetic-btn btn-filled w-full md:w-auto px-8 sm:px-12 py-5 sm:py-6 font-bold uppercase tracking-widest transition-all shadow-2xl shadow-accent/20">
                     <span>
                         Empecemos Ahora
                         <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -133,12 +133,13 @@
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16 sm:mb-24">
                 <div class="footer-brand space-y-8">
-                    <h3 class="text-4xl font-bold uppercase tracking-tighter">Esteban</h3>
+                    <h3 class="text-3xl sm:text-4xl font-bold uppercase tracking-tighter">Esteban</h3>
                     <p class="text-text-muted leading-relaxed text-sm">Elevando los estándares de la arquitectura interior mediante sistemas de pladur de alta precisión.</p>
                     <div class="social-grid">
-                        <a href="https://instagram.com/esteban_pladur" target="_blank" class="social-icon" aria-label="Instagram">
+
+                        <a href="https://instagram.com/estebanblanca1" target="_blank" class="social-icon" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                         </a>
                         <a href="https://linkedin.com/in/esteban-pladur" target="_blank" class="social-icon" aria-label="LinkedIn">
@@ -167,13 +168,13 @@
                             <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/10 transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                             </div>
-                            <span class="text-sm font-medium">info@estebanpladur.com</span>
+                            <a href="mailto:info@estebanpladur.com" class="text-sm font-medium hover:text-accent transition-colors">info@estebanpladur.com</a>
                         </div>
                         <div class="flex items-center space-x-4 group cursor-pointer">
                             <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/10 transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                             </div>
-                            <span class="text-sm font-medium">+34 900 000 000</span>
+                            <a href="tel:+34611421278" class="text-sm font-medium hover:text-accent transition-colors">+34 611 421 278</a>
                         </div>
                     </div>
                 </div>

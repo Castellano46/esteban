@@ -97,8 +97,8 @@ header.scrolled {
 
 /* Hero Styles */
 .hero-title {
-    font-size: clamp(2.5rem, 8vw, 6rem);
-    line-height: 0.95;
+    font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+    line-height: 0.98;
     letter-spacing: -0.03em;
 }
 
@@ -731,3 +731,133 @@ input:-webkit-autofill:active {
     font-size: 1.1rem;
     line-height: 1.6;
 }
+
+/* ==========================================================================
+   MOBILE & RESPONSIVE UX OPTIMIZATIONS
+   ========================================================================== */
+
+/* Word-break protection for large headlines on mobile screens */
+h1, h2, h3, h4 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* Touch target minimums for interactive elements */
+button,
+a,
+.social-icon,
+.mobile-menu-btn,
+.star-input i,
+.star-input svg {
+    touch-action: manipulation;
+}
+
+/* Responsive Quote Box (Stack on mobile/tablet) */
+@media (max-width: 1023px) {
+    .quote-box {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        left: auto !important;
+        margin-top: 2rem;
+        max-width: 100% !important;
+        padding: 2rem !important;
+    }
+}
+
+/* Mobile & Tablet Adjustments (< 768px) */
+@media (max-width: 768px) {
+    header {
+        padding-top: 1.25rem !important;
+        padding-bottom: 1.25rem !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    header.scrolled {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 7.5vw, 3.2rem);
+        line-height: 1.05;
+    }
+
+    .magnetic-btn {
+        width: 100%;
+        min-height: 52px;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    .review-card {
+        padding: 1.75rem !important;
+    }
+
+    .review-card::after {
+        font-size: 3.5rem;
+        top: 0.5rem;
+        right: 1rem;
+    }
+
+    .legal-modal-container {
+        padding: 1.75rem 1.25rem !important;
+        max-height: 85vh;
+        border-radius: 12px;
+    }
+
+    .legal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .success-card {
+        padding: 2.25rem 1.5rem !important;
+        width: 92%;
+    }
+
+    .success-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .input-group {
+        margin-bottom: 2.5rem;
+    }
+
+    .star-input i, .star-input svg {
+        width: 2rem !important;
+        height: 2rem !important;
+        padding: 0.25rem;
+    }
+}
+
+/* Small Mobile Screens (< 480px) */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: clamp(1.85rem, 8.5vw, 2.75rem);
+    }
+
+    .footer-brand h3 {
+        font-size: 2rem;
+    }
+
+    .social-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .newsletter-form {
+        padding: 0.25rem;
+    }
+
+    .newsletter-form input {
+        font-size: 0.85rem;
+    }
+
+    .newsletter-btn {
+        width: 42px;
+        height: 42px;
+    }
+}
+
